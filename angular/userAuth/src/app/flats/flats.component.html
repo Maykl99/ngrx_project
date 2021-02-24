@@ -1,0 +1,81 @@
+<div class="row">
+  <div class="col-md-12 p-0">
+   <app-navbar (searchEvent)="childValue.next($event)"></app-navbar>
+  </div>
+</div>
+
+<div class="col-md-3">
+  <form class="mt-5" [formGroup]="reactiveForm" [hidden]="hidden">
+
+    <div class="form-group">
+      <label for="wc" class="text-light">wc</label>
+      <input
+          formControlName="wc"
+          id="wc"
+          type="number"
+          class="form-control">
+    </div>
+
+   <div class="form-group">
+      <label for="room" class="text-light">room</label>
+      <input
+          formControlName="room"
+          id="room"
+          type="number"
+          class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="bed" class="text-light">bed</label>
+      <input
+          formControlName="bed"
+          id="bed"
+          type="number"
+          class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="mq" class="text-light">mq</label>
+      <input
+          formControlName="mq"
+          id="mq"
+          type="number"
+          class="form-control">
+    </div>
+  </form>
+</div>
+
+
+<button type="button" (click)="filterForm()" class="btn btn-danger mt-3">Show filter</button>
+
+<div>
+  <h4 class="mt-5 text-light">Vuoi inserire un nuovo appartamento?</h4>
+  <a href="#" [routerLink]="['create']" class="btn btn-info">Create</a>
+</div>
+
+<h1 class="text-center m-5 text-light">Lista appartamenti</h1>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col" *ngFor="let flat of filteredStates$ | async">  <!-- | keyvalue -->
+
+    <div class="card h-100">
+      <!-- <img [src] ="flat.image" class="card-img-top" alt="{{ flat.title }}">{{ flat.image }} -->
+      <div class="card-body">
+        <h5 class="card-title">{{ flat.title }}</h5>
+        <p class="card-text">{{ flat.description }}</p>
+        <p class="card-text">{{ flat.id }}</p>
+        <a href="#" [routerLink]="[ flat.id ]" class="btn btn-info m-1">View</a>
+        <a href="#" [routerLink]="[ flat.id , 'edit']" class="btn btn-info m-1">Edit</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+

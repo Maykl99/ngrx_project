@@ -1,0 +1,223 @@
+ /* $request = request();
+                $token = $request->bearerToken(); */
+
+                $user->tokens()->where('id', Auth::id())->delete();
+                $userInfo= User::where('email', $request->email)->first();
+                return $response = [
+                    #'token' => $token,
+                    'user' => $userInfo,
+                    'message' => "User is logout"
+
+                ];
+           /*  else:
+                $response = new Response(
+                    'Content',
+                    Response::HTTP_UNAUTHORIZED,      # HTTP_OK,
+                   ['content-type' => 'json']
+                );
+                return ['Unauthorised.', ['error'=>'Unauthorised'] , $response];
+            endif; */
+
+
+            "^3.43.3"
+
+
+
+
+
+
+
+ /* if (this.myForm.value != '') {
+      const source = from(this.myForm.value);
+      source.subscribe(val => console.log(val));
+    } */
+    //const example = source.pipe(filter( flat => flat.room >= 2)); // filtrare in base ai criteri di ricerca!
+    //const source = from(this.flats);
+
+    //this.selectChangeHandler(event);
+
+
+    
+    /* this.userService.flats().subscribe(res => {
+      this.flats = res;
+    }) */
+
+
+    
+/*
+selectChangeHandler(event)
+{
+  this.selectedValue = event.target.value;
+  console.log(this.selectedValue);
+} */
+
+
+  //.filter(flats => this.flats.mq > 50)
+
+
+    /* const filterFlats = from(this.flats);
+    const pipe = filterFlats.pipe( tap(e => console.log(e)));
+    const subscribe = pipe.subscribe(val => console.log(val)); */
+
+    //emit ({name: 'Joe', age: 31}, {name: 'Bob', age:25})
+    const source = from([
+      { name: 'Joe', age: 31 },
+      { name: 'Bob', age: 25 }
+    ]);
+    //filter out people with age under 30
+    const example = source.pipe(filter(person => person.age >= 30));
+    //output: "Over 30: Joe"
+    const subscribe = example.subscribe(val => console.log(`Over 30: ${val.name}`));
+
+
+    object => {
+          //this.flats.includes(this.filter.value) //find(flat => flat.wc === this.filter.value);
+          object['wc'] == this.filter.value
+          console.log(this.flats);
+        }
+
+
+
+
+
+
+
+        //this.flats['wc'].value === this.filter['wc'].value
+          for (var val in this.flats) {
+            this.flats[val]['wc'] == this.filter.value
+          }
+          console.log(this.filter.value)
+          //console.log(this.flats)
+
+
+
+
+
+
+
+
+
+
+
+
+          if (this.filter) {
+      this.filter.subscribe(
+        result => {
+          console.log(result);
+        }
+      )
+    }
+
+
+
+
+
+
+
+
+
+    ==========================
+
+
+    //deleteFlat(id){
+    /* this.service.deleteFlat(id).subscribe(res => {
+         this.flats = this.flats.filter(item => item.id !== id); // per farlo funzionare mettere sopra flats: Flat[];
+         console.log('Post deleted successfully!');
+    })
+    alert('al momento disabilitato');
+  }
+
+  ngAfterViewInit() {
+    this.filter$ = this.child.filter$.value
+  }
+
+  myForm = new FormGroup({
+    room: new FormControl(0),
+    bed: new FormControl(0),
+    wc: new FormControl(0),
+    mq: new FormControl(0)
+  });
+
+  get f(){
+    return this.myForm.controls;
+  }
+
+submitFilter()
+  {
+    /* this.filter.next(this.myForm.value);
+    this.flats = this.flats.filter(
+      res => {
+        return res.bed >= this.myForm.value.bed &&
+          res.room >= this.myForm.value.room &&
+          res.wc >= this.myForm.value.wc &&
+          res.mq >= this.myForm.value.mq
+      }
+    ) */
+/*     this.flats.map(
+      res => console.log(res)
+    )
+  }
+
+  ngOnInit(): void {
+    /* this.service.getFlats()
+      .subscribe(
+        response => {
+          this.flats = Object.values(response.data);
+        }
+      ) */
+
+    /* this.filter.pipe(
+    ).subscribe(
+      res => {
+        this.flats = []
+      }
+    )
+    //Observable.combineLatest()
+  } // chiusura ngOnit
+
+
+
+}
+
+
+
+/*   ngAfterViewInit() {
+    this.child.filter$.subscribe(
+      res => {
+        this.filter$ = res;
+        console.log(this.filter$);
+      }
+    )
+  } */
+
+  receiveSearch($event) {
+    /* this.filter$ = $event; */
+    console.log($event);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    //this.flats$ = this.service.getFlats();
+
+    /* this.http.get<Flat[]>('http://localhost:8000/api/flats/').subscribe(
+      res => {
+        console.log(res);
+      }
+    ) */
+
+
+          /* this.flats$ = this.flats$.pipe(
+        map((flat) => flat.filter(flat => {
+          flat.id !== id;
+          alert('appartamento eliminato!')
+        })) */

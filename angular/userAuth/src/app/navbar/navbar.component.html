@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+<!--         <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/login']">Login</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/register']">Register new account</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-danger" [routerLink]="['/logout']">Logout</a>
+        </li>
+      </ul>
+      <form class="d-flex" [formGroup] ="reactiveNavbar">
+        <input class="form-control me-2" type="text" placeholder="Ricerca per titolo" aria-label="Search" name="filter" formControlName="filter">
+      </form>
+    </div>
+  </div>
+</nav>

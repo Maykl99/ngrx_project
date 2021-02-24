@@ -1,0 +1,106 @@
+<div class="row">
+  <div class="col-md-6 m-5">
+    <a href="#" routerLink="/flats" class="btn btn-primary mb-4">Torna indietro</a>
+    <h1 class="text-light">Modifica appartamento</h1>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+      <div class="form-group">
+          <label for="title" class="text-light">Titolo</label>
+          <input
+              placeholder="{{ flat.title }}"
+              formControlName="title"
+              id="title"
+              type="text"
+              class="form-control">
+         <div *ngIf="f.title.touched && f.title.invalid" class="alert alert-danger">
+              <div *ngIf="f.title.errors.required">Name is required.</div>
+              <div *ngIf="f.title.errors.minlength">Name should be 3 character.</div>
+          </div>
+      </div>
+
+      <div class="form-group">
+        <label for="room" class="text-light">Room</label>
+        <input
+            placeholder="{{ flat.room }}"
+            formControlName="room"
+            id="room"
+            type="number"
+            class="form-control">
+        <div *ngIf="f.room.touched && f.room.invalid" class="alert alert-danger">
+            <div *ngIf="f.room.errors.required">Room is required.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="bed" class="text-light">Bed</label>
+        <input
+            placeholder="{{ flat.bed }}"
+            formControlName="bed"
+            id="bed"
+            type="number"
+            class="form-control">
+       <div *ngIf="f.bed.touched && f.bed.invalid" class="alert alert-danger">
+            <div *ngIf="f.bed.errors.required">Bed is required.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="wc" class="text-light">WC</label>
+        <input
+            placeholder="{{ flat.wc }}"
+            formControlName="wc"
+            id="wc"
+            type="number"
+            class="form-control">
+        <div *ngIf="f.wc.touched && f.wc.invalid" class="alert alert-danger">
+            <div *ngIf="f.wc.errors.required">WC is required.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="mq" class="text-light">MQ</label>
+        <input
+            placeholder="{{ flat.mq }}"
+            formControlName="mq"
+            id="mq"
+            type="number"
+            class="form-control">
+        <div *ngIf="f.mq.touched && f.mq.invalid" class="alert alert-danger">
+            <div *ngIf="f.mq.errors.required">WC is required.</div>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label for="description" class="text-light">Description</label>
+        <input
+            placeholder="{{ flat.description }}"
+            formControlName="description"
+            id="description"
+            type="text"
+            class="form-control">
+        <div *ngIf="f.description.touched && f.description.invalid" class="alert alert-danger">
+            <div *ngIf="f.description.errors.required">Description is required.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="image" class="text-light">File</label>
+        <input
+            formControlName="image"
+            id="image"
+            type="file"
+            class="form-control"
+            (change)="onFileChange($event)">
+        <div *ngIf="f.image.touched && f.image.invalid" class="alert alert-danger">
+            <div *ngIf="f.image.errors.required">File is required.</div>
+        </div>
+      </div>
+
+      <img [src]="imageSrc" *ngIf="imageSrc" style="height: 300px; width:500px">
+      <button class="btn btn-danger" type="submit" [disabled] ="!form.valid">Salva la modifica</button>
+  </form>
+
+  </div>
+</div>
+

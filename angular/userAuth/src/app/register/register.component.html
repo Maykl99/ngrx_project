@@ -1,0 +1,37 @@
+  <div class="col-md-12 mt-5">
+
+    <a href="#" routerLink="/flats" class="btn btn-primary mb-4">Torna indietro</a>
+
+    <div class="card card-body bg-light">
+      <form class="form-horizontal" (ngSubmit)="register()" [formGroup]="credentials">
+        <fieldset>
+          <legend>Registrati nel portale</legend>
+          <div class="form-group">
+            <label for="email" class="col-lg-2 control-label">Email</label>
+            <div class="col-lg-10">
+              <input type="email" class="form-control" id="email" name="email" placeholder="Inserisci email" formControlName="email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="name" class="col-lg-2 control-label">Full name</label>
+            <div class="col-lg-10">
+              <input type="text" class="form-control" id="name" name="name" placeholder="Inserisci nome e cognome" formControlName="name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="password" class="col-lg-2 control-label">Password</label>
+            <div class="col-lg-10">
+              <input type="password" class="form-control" id="password" name="password" placeholder="Password" formControlName="password">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+              <button type="submit" class="btn btn-primary">Create</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+

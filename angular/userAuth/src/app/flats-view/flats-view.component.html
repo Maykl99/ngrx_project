@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-md-6 m-5">
+
+    <h1 class="text-light">Dettagli del tuo appartamento</h1>
+
+    <div class="mt-5 card text-white bg-danger mb-3" style="max-width: 18rem;">
+      <div class="card-header">ID {{ flat.id }}</div>
+      <div class="card-body">
+        <h5 class="card-title">Titolo {{ flat.title }}</h5>
+        <p class="card-text">Descrizione {{ flat.description }}</p>
+
+        <p class="card-text">Stanze {{ flat.room }}</p>
+        <p class="card-text">WC {{ flat.wc }}</p>
+        <p class="card-text">MQ {{ flat.mq }}</p>
+        <p class="card-text">Bed {{ flat.bed }}</p>
+        <!-- <img src="{{ flat.bed }}"> -->
+      </div>
+      <a href="#" routerLink="/flats" class="btn btn-primary">Torna indietro</a>
+      <button type="button" (click)="deleteFlat(flat.id)" class="btn btn-danger m-1">Delete</button>
+    </div>
+
+
+    <div class="mt-5 col-md-2 alert alert-danger" role="alert" [hidden] = "create">
+      Appartamento eliminato!
+    </div>
+
+  </div>
+</div>
+
